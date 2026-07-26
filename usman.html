@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Usman • your domain is waiting</title>
+  <!-- A clean, human-centric placeholder – like a quiet welcome. -->
+  <style>
+    /* CSS reset & global rhythm — inspired by clarity, not clutter */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #ffffff;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      margin: 0;
+      color: #1f1f1f;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* main card – soft, airy, almost like a gentle note */
+    .greeting-card {
+      max-width: 720px;
+      width: 100%;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+      animation: fadeRise 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    @keyframes fadeRise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* subtle domain label – like a whisper */
+    .domain-badge {
+      font-size: 0.9rem;
+      font-weight: 450;
+      letter-spacing: 0.02em;
+      color: #5f6368;
+      background: #f1f3f4;
+      padding: 0.4rem 1rem;
+      border-radius: 2rem;
+      display: inline-block;
+      margin-bottom: 0.25rem;
+      backdrop-filter: blur(2px);
+      transition: background 0.2s ease;
+    }
+
+    .domain-badge:hover {
+      background: #e8eaed;
+    }
+
+    /* main headline – human, warm, direct */
+    h1 {
+      font-size: clamp(2.6rem, 8vw, 4.4rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: #202124;
+      margin: 0;
+    }
+
+    .highlight-name {
+      font-weight: 600;
+      background: linear-gradient(135deg, #1a73e8 0%, #4b8fed 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+    }
+
+    /* the reserved domain display – clean monospace feeling */
+    .domain-showcase {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem;
+      background: #ffffff;
+      border: 1px solid #e3e8ee;
+      border-radius: 28px;
+      padding: 0.7rem 1.8rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+      transition: box-shadow 0.2s, border-color 0.2s;
+      margin: 0.5rem 0 0.25rem;
+    }
+
+    .domain-showcase:hover {
+      border-color: #c4c9d4;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    }
+
+    .domain-text {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #1a73e8;
+      background: #f8fbff;
+      padding: 0.2rem 0;
+      font-family: 'Google Sans', 'Inter', system-ui, sans-serif;
+    }
+
+    .domain-tld {
+      font-size: 2rem;
+      font-weight: 400;
+      color: #5f6368;
+    }
+
+    .status-dot {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-left: 0.5rem;
+    }
+
+    .pulse {
+      width: 9px;
+      height: 9px;
+      background: #34a853;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 0 0 rgba(52, 168, 83, 0.5);
+      animation: pulse-ring 1.8s infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% {
+        box-shadow: 0 0 0 0 rgba(52, 168, 83, 0.5);
+      }
+      70% {
+        box-shadow: 0 0 0 8px rgba(52, 168, 83, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(52, 168, 83, 0);
+      }
+    }
+
+    .reserved-label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #1e8e3e;
+      letter-spacing: 0.01em;
+    }
+
+    /* descriptive text – human and friendly */
+    .description {
+      font-size: 1.15rem;
+      color: #444746;
+      max-width: 550px;
+      margin-top: 0.2rem;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .description strong {
+      font-weight: 600;
+      color: #1f1f1f;
+    }
+
+    /* subtle separator / breathing space */
+    .subtle-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, #e3e8ee 0%, transparent 90%);
+      margin: 0.4rem 0 1rem;
+    }
+
+    /* action hint – minimal, friendly */
+    .coming-soon-message {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1rem;
+      color: #5f6368;
+      background: #f8f9fa;
+      padding: 0.6rem 1.4rem;
+      border-radius: 2.5rem;
+      transition: background 0.2s;
+      margin-top: 0.3rem;
+    }
+
+    .coming-soon-message:hover {
+      background: #f1f3f4;
+    }
+
+    .icon-small {
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    /* footer / signature – clean google-like tone */
+    .signature {
+      margin-top: 1.6rem;
+      font-size: 0.9rem;
+      color: #80868b;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .heart {
+      color: #ea4335;
+      font-size: 1rem;
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .signature:hover .heart {
+      transform: scale(1.2);
+    }
+
+    /* responsiveness */
+    @media (max-width: 500px) {
+      body {
+        padding: 1.5rem;
+        align-items: flex-start;
+        padding-top: 3rem;
+      }
+
+      .domain-showcase {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+        padding: 1rem 1.4rem;
+      }
+
+      .domain-text, .domain-tld {
+        font-size: 1.8rem;
+      }
+
+      .status-dot {
+        margin-left: 0;
+        margin-top: 0.3rem;
+      }
+    }
+
+    /* accessibility / focus */
+    a, button {
+      outline: none;
+    }
+
+    /* subtle interactive for the domain text (just visual cue) */
+    .domain-showcase {
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+  <main class="greeting-card">
+    <!-- Tiny badge: just a soft indicator -->
+    <span class="domain-badge" aria-label="domain reservation">🌐 reserved domain</span>
+
+    <!-- Warm headline with Usman's name beautifully highlighted -->
+    <h1>
+      Hey <span class="highlight-name">Usman</span>,<br> your corner of the web is ready.
+    </h1>
+
+    <!-- Domain display – clean, readable, with subtle live status -->
+    <div class="domain-showcase" role="text" aria-label="usman.dev domain reserved">
+      <span class="domain-text">usman</span>
+      <span class="domain-tld">.dev</span>
+      <span class="status-dot">
+        <span class="pulse" aria-hidden="true"></span>
+        <span class="reserved-label">reserved</span>
+      </span>
+    </div>
+
+    <!-- Human description: not corporate, just friendly -->
+    <p class="description">
+      I’ve secured <strong>usman.dev</strong> for you — a clean, personal space on the internet. 
+      Think of it as a blank canvas for your ideas, projects, or simply a home for your name.
+    </p>
+
+    <div class="subtle-divider" aria-hidden="true"></div>
+
+    <!-- Soft call-to-action / status message – google-like subtlety -->
+    <div class="coming-soon-message">
+      <span class="icon-small">✨</span>
+      <span>Something meaningful will live here soon</span>
+      <span style="margin-left: auto; font-weight: 400; color: #80868b;">— for you</span>
+    </div>
+
+    <!-- Personal signature, understated -->
+    <div class="signature">
+      <span>crafted with</span>
+      <span class="heart">❤️</span>
+      <span>by a friend</span>
+      <span style="margin: 0 0.3rem;">·</span>
+      <span>usman.dev</span>
+    </div>
+  </main>
+</body>
+</html>
